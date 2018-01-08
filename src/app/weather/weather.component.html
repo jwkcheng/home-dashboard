@@ -1,0 +1,7 @@
+<p>
+  Weather for {{ defaultCity | uppercase }}<br/>
+  <a href="" (click)="loadDefault()">Default</a> | City Code: <input [(ngModel)]="currCity" (change)="updateUrl()" placeholder="name">
+</p>
+<!-- Begin WeatherLink Fragment -->
+<iframe title="Environment Canada Weather" width="287px" height="250px" [src]="currentUrl | safe" allowtransparency="true" frameborder="0"></iframe>
+<!-- End WeatherLink Fragment -->
