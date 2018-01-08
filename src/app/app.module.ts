@@ -20,11 +20,11 @@ import {SpinnerComponent} from './spinner/spinner.component';
 import {ServicesModule} from './services/services.module';
 import {ClockService} from './clock.service';
 import {FeedService} from './feed.service';
-import {FeedCardComponent} from './feed-card/feed-card.component';
 
 import {MatCardModule, MatToolbarModule, MatButtonModule, MatIconModule, MatIconRegistry} from '@angular/material';
 import {IpCameraComponent} from './ip-camera/ip-camera.component';
 import { SafePipe } from './safe.pipe';
+import { NewsFeedComponent } from './news-feed/news-feed.component';
 
 @NgModule({
   declarations: [
@@ -35,8 +35,8 @@ import { SafePipe } from './safe.pipe';
     StripHtmlTagsPipe,
     SpinnerComponent,
     ClockComponent,
-    FeedCardComponent,
-    IpCameraComponent
+    IpCameraComponent,
+    NewsFeedComponent
   ],
   imports: [
     BrowserModule,

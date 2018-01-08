@@ -1,6 +1,14 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ClockComponent } from './clock.component';
+import {Observable} from 'rxjs/Observable';
+import 'rxjs/add/observable/interval';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/share';
+
+
+import {ClockComponent} from './clock.component';
+import {ClockService} from '../clock.service';
+import { MockClockService } from '../mock-clock.service'
 
 describe('ClockComponent', () => {
   let component: ClockComponent;
@@ -8,9 +16,15 @@ describe('ClockComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ClockComponent ]
-    })
-    .compileComponents();
+      declarations: [ClockComponent]
+    });
+    TestBed.overrideComponent(ClockComponent, {
+      set: {
+        providers: [
+          {provide: ClockService, useClass: MockClockService}
+        ]
+      }
+    });
   }));
 
   beforeEach(() => {
@@ -23,3 +37,5 @@ describe('ClockComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+
+
