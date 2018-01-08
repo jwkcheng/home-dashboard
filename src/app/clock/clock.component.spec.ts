@@ -7,8 +7,8 @@ import 'rxjs/add/operator/share';
 
 
 import {ClockComponent} from './clock.component';
-import {ClockService} from '../clock.service';
-import { MockClockService } from '../mock-clock.service'
+import {ClockService} from './clock.service';
+import { MockClockService } from './mock-clock.service'
 
 describe('ClockComponent', () => {
   let component: ClockComponent;

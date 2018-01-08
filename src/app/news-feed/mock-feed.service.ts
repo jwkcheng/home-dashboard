@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs/Rx';
-import {Feed} from './model/feed';
+import {Feed} from '../model/feed';
 
 @Injectable()
 export class MockFeedService {

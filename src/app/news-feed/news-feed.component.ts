@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { FeedCardComponent } from '../feed-card/feed-card.component';
-import { FeedService } from '../feed.service';
+import { FeedService } from './feed.service';
 import { FeedEntry } from '../model/feed-entry';
 import { SpinnerComponent } from '../spinner/spinner.component';
 

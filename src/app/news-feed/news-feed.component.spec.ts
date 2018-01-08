@@ -5,11 +5,11 @@ import {NgArrayPipesModule, NgStringPipesModule} from 'angular-pipes';
 import { FeedCardComponent } from '../feed-card/feed-card.component';
 import {SpinnerComponent} from '../spinner/spinner.component';
 import {NewsFeedComponent} from './news-feed.component';
-import {FeedService} from '../feed.service';
+import {FeedService} from './feed.service';
 import {Observable} from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import {Feed} from '../model/feed';
-import { MockFeedService } from '../mock-feed.service'
+import { MockFeedService } from './mock-feed.service'
 
 describe('NewsFeedComponent', () => {
   let component: NewsFeedComponent;

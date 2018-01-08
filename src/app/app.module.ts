@@ -6,53 +6,37 @@ import {HttpModule} from '@angular/http';
 import {Pipe, PipeTransform} from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
 
-import {NgArrayPipesModule, NgStringPipesModule} from 'angular-pipes';
 import {DragulaModule} from 'ng2-dragula';
-
+import {StripHtmlTagsPipe} from './pipe/strip-html-tags.pipe';
+import { SafePipe } from './safe.pipe';
 
 import {AppComponent} from './app.component';
 import {WeatherComponent} from './weather/weather.component';
 import {CalendarComponent} from './calendar/calendar.component';
-import {ClockComponent} from './clock/clock.component';
-import {StripHtmlTagsPipe} from './pipe/strip-html-tags.pipe';
-import {SpinnerComponent} from './spinner/spinner.component';
-
-import {ServicesModule} from './services/services.module';
-import {ClockService} from './clock.service';
-import {FeedService} from './feed.service';
-
-import {MatCardModule, MatToolbarModule, MatButtonModule, MatIconModule, MatIconRegistry} from '@angular/material';
 import {IpCameraComponent} from './ip-camera/ip-camera.component';
-import { SafePipe } from './safe.pipe';
-import { NewsFeedComponent } from './news-feed/news-feed.component';
+
+import { ClockModule } from './clock/clock.module';
+import { NewsFeedModule } from './news-feed/news-feed.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WeatherComponent,
-    CalendarComponent,
     SafePipe,
     StripHtmlTagsPipe,
-    SpinnerComponent,
-    ClockComponent,
-    IpCameraComponent,
-    NewsFeedComponent
+    WeatherComponent,
+    CalendarComponent,
+    IpCameraComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    ServicesModule,
-    MatCardModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatIconModule,
-    NgArrayPipesModule,
-    NgStringPipesModule,
-    DragulaModule
+    DragulaModule,
+    ClockModule.forRoot(),
+    NewsFeedModule
   ],
 
-  providers: [ClockService, FeedService, MatIconRegistry],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
