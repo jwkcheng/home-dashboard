@@ -2,6 +2,14 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.2.
 
+I created this app as a playground to learn some of the ins and outs of Angular 2. It's intended to be a working "dashboard" for a smart home. Currently running the following modules/components
+- Clock (This module subscribes to a service to update a clock object)
+- News Feed (Retrieves an rss news feed and displays a number of the most recent entries).
+- IP Camera (Embeds live video from a local ip-camera)
+- Weather (Embeds Environment Canada's weather applet).
+
+Currently as a base, some of the code/components were implemented following various tutorials online.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

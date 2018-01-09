@@ -36,6 +36,18 @@ describe('ClockComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should get time', () => {
+      let dateString = '2017-01-01T00:00:00';
+
+      let clockService = fixture.debugElement.injector.get(ClockService);
+      spyOn(clockService, 'getClock').and.returnValue(Observable.of(new Date(dateString)));
+
+      component.ngOnInit();
+      expect(clockService.getClock).toHaveBeenCalled();
+      expect(component.time).toEqual(new Date(dateString));
+  });
+
 });
 
 
